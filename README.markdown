@@ -8,18 +8,18 @@ The **Prometheus PVE Exporter** Helm chart provides a straightforward way to dep
 
 To use this Helm chart, you first need to have Helm installed on your Kubernetes cluster. Once you have Helm set up, you can deploy the chart using the following steps:
 
-1. **Add the Helm repository (if applicable):**
+1. **Clone the Helm repository:**
    ```bash
-   helm repo add my-repo <repository-url>
-   helm repo update
+   git clone https://github.com/zgs225/prometheus-pve-exporter
    ```
 
 2. **Install the chart:**
    ```bash
-   helm install my-release my-repo/prometheus-pve-exporter
+   cd prometheus-pve-exporter
+   helm install <my-release> .
    ```
 
-   Replace `my-release` with a name for your Helm release and `<repository-url>` with the URL of the Helm repository containing the chart.
+   Replace `my-release` with a name for your Helm release.
 
 3. **Verify the installation:**
    ```bash
