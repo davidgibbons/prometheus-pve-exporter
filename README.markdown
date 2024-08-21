@@ -117,4 +117,4 @@ This configuration sets up token-based authentication, targets two Proxmox VE se
 - Ensure that Proxmox VE servers are accessible from your Kubernetes cluster.
 - Review the Prometheus documentation for additional configuration options and best practices for setting up scrape targets.
 
-For more detailed information, consult the [Prometheus PVE Exporter documentation](https://github.com/<your-repo>/prometheus-pve-exporter).
+For more detailed information, consult the [Prometheus PVE Exporter documentation](https://github.com/prometheus-pve/prometheus-pve-exporter).
