@@ -1,0 +1,8 @@
+# yaml-language-server: $schema=https://raw.githubusercontent.com/yannh/kubernetes-json-schema/master/v1.31.0-local/configmap-v1.json
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: pve-config
+data:
+  pve.yml: |
+    {{- .Values.authentication | toYaml | nindent 4 }}
