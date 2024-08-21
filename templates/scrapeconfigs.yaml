@@ -1,8 +1,10 @@
 apiVersion: monitoring.coreos.com/v1alpha1
 kind: ScrapeConfig
 metadata:
-  name: pve
+  name: {{ include "prometheus-pve-exporter.fullname" . }}
   namespace: {{ .Values.scrapeConfigNamespace | default .Release.Namespace }}
+  labels:
+    {{- include "prometheus-pve-exporter.labels" . | nindent 4 }}
 spec:
   jobName: pve
   staticConfigs:
