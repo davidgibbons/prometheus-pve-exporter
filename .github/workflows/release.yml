@@ -4,6 +4,10 @@ on:
   push:
     branches:
       - main
+  workflow_run:
+    workflows: ["Semantic Release"]
+    types:
+      - completed
 
 jobs:
   release:
@@ -12,6 +16,7 @@ jobs:
     permissions:
       contents: write
     runs-on: ubuntu-latest
+    if: github.event_name == 'push' || github.event.workflow_run.conclusion == 'success'
     steps:
       - name: Checkout
         uses: actions/checkout@v4
