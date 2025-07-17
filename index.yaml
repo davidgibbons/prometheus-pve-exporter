@@ -3,6 +3,17 @@ entries:
   prometheus-pve-exporter:
   - apiVersion: v2
     appVersion: 3.4.4
+    created: "2025-07-17T20:08:45.425038882Z"
+    description: Exposes information gathered from Proxmox VE cluster for use by the
+      Prometheus monitoring system
+    digest: cbb31b2816167bc63fe600451b923f6c37c09c89ea83e0a5f756619b60738892
+    name: prometheus-pve-exporter
+    type: application
+    urls:
+    - https://github.com/davidgibbons/prometheus-pve-exporter/releases/download/prometheus-pve-exporter-1.1.0/prometheus-pve-exporter-1.1.0.tgz
+    version: 1.1.0
+  - apiVersion: v2
+    appVersion: 3.4.4
     created: "2025-07-17T18:54:45.508457862Z"
     description: Exposes information gathered from Proxmox VE cluster for use by the
       Prometheus monitoring system
@@ -23,4 +34,4 @@ entries:
     urls:
     - https://github.com/davidgibbons/prometheus-pve-exporter/releases/download/prometheus-pve-exporter-1.0.0/prometheus-pve-exporter-1.0.0.tgz
     version: 1.0.0
-generated: "2025-07-17T18:54:45.508466508Z"
+generated: "2025-07-17T20:08:45.425050363Z"
