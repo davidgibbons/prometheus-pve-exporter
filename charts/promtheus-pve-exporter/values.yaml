@@ -56,6 +56,25 @@ securityContext: {}
   # runAsNonRoot: true
   # runAsUser: 1000
 
+# Environment variables for the container
+# Can be specified as simple key-value pairs or with valueFrom for secrets/configmaps
+env: {}
+  # Simple environment variables:
+  # MY_ENV_VAR: "my-value"
+  # DEBUG: "true"
+  #
+  # Environment variables from secrets or configmaps:
+  # SECRET_PASSWORD:
+  #   valueFrom:
+  #     secretKeyRef:
+  #       name: my-secret
+  #       key: password
+  # CONFIG_VALUE:
+  #   valueFrom:
+  #     configMapKeyRef:
+  #       name: my-configmap
+  #       key: config-key
+
 service:
   type: ClusterIP
   port: 9221
