@@ -5,10 +5,17 @@ metadata:
   namespace: {{ .Values.scrapeConfigNamespace | default .Release.Namespace }}
   labels:
     {{- include "prometheus-pve-exporter.labels" . | nindent 4 }}
+    {{- with .Values.scrapeConfig.labels }}
+    {{- toYaml . | nindent 4 }}
+    {{- end }}
 spec:
   jobName: pve
   staticConfigs:
     - targets: {{ .Values.scrapeTargets | toJson }}
+      {{- if .Values.scrapeConfig.staticLabels }}
+      labels:
+        {{- toYaml .Values.scrapeConfig.staticLabels | nindent 8 }}
+      {{- end }}
   metricsPath: /pve
   params:
     module: ["default"]
@@ -21,3 +28,6 @@ spec:
       targetLabel: instance
     - targetLabel: __address__
       replacement: {{ include "prometheus-pve-exporter.fullname" . }}.{{ .Release.Namespace }}.svc:{{ .Values.service.port }}
+    {{- with .Values.scrapeConfig.relabelings }}
+    {{- toYaml . | nindent 4 }}
+    {{- end }}

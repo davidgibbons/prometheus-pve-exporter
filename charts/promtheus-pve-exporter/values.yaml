@@ -19,6 +19,32 @@ scrapeTargets: []
 # Namespace of ScrapeConfig, defaults to release namespace
 scrapeConfigNamespace:
 
+# ScrapeConfig customization
+scrapeConfig:
+  # Additional labels to add to the ScrapeConfig metadata (Kubernetes object labels)
+  labels: {}
+    # environment: production
+    # team: infrastructure
+  
+  # Static labels to add to all scraped metrics
+  staticLabels: {}
+    # cluster_name: "my-pve-cluster"
+    # environment: "production"
+    # datacenter: "us-west-1"
+  
+  # Additional relabeling rules to apply during scraping
+  relabelings: []
+    # Example: Add a custom label based on target address
+    # - sourceLabels: [__address__]
+    #   regex: '(\d+\.\d+\.\d+\.\d+).*'
+    #   targetLabel: datacenter
+    #   replacement: 'dc-${1}'
+    # 
+    # Example: Drop metrics with certain names
+    # - sourceLabels: [__name__]
+    #   regex: 'unwanted_metric_.*'
+    #   action: drop
+
 replicaCount: 1
 
 image:
