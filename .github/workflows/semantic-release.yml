@@ -50,3 +50,4 @@ jobs:
             @semantic-release/npm
             @semantic-release/release-notes-generator
             @semantic-release/commit-analyzer
+            conventional-changelog-conventionalcommits
