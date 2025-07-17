@@ -8,17 +8,16 @@ metadata:
 spec:
   jobName: pve
   staticConfigs:
-    - targets:
-      {{- .Values.scrapeTargets | toYaml | nindent 6 }}
+    - targets: {{ .Values.scrapeTargets | toJson }}
   metricsPath: /pve
   params:
-    module: [default]
+    module: ["default"]
     cluster: ["1"]
     node: ["1"]
   relabelings:
     - sourceLabels: [__address__]
       targetLabel: __param_target
-    - sourceLAbels: [__param_target]
+    - sourceLabels: [__param_target]
       targetLabel: instance
     - targetLabel: __address__
       replacement: {{ include "prometheus-pve-exporter.fullname" . }}.{{ .Release.Namespace }}.svc:{{ .Values.service.port }}
