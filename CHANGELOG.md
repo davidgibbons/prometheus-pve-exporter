@@ -1,3 +1,9 @@
+## [1.1.1](https://github.com/davidgibbons/prometheus-pve-exporter/compare/v1.1.0...v1.1.1) (2025-08-21)
+
+### Bug Fixes
+
+* per spec jobName isnt a valid key ([296a148](https://github.com/davidgibbons/prometheus-pve-exporter/commit/296a148048215bacc7a7ac1c0197af25dbc5676e))
+
 ## [1.1.0](https://github.com/davidgibbons/prometheus-pve-exporter/compare/v1.0.2...v1.1.0) (2025-07-17)
 
 ### Features
