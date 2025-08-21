@@ -9,7 +9,6 @@ metadata:
     {{- toYaml . | nindent 4 }}
     {{- end }}
 spec:
-  jobName: pve
   staticConfigs:
     - targets: {{ .Values.scrapeTargets | toJson }}
       {{- if .Values.scrapeConfig.staticLabels }}
