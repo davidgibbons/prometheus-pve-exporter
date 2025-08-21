@@ -1,3 +1,9 @@
+## [1.1.0](https://github.com/davidgibbons/prometheus-pve-exporter/compare/v1.0.2...v1.1.0) (2025-07-17)
+
+### Features
+
+* Add support for labels ([e835dc0](https://github.com/davidgibbons/prometheus-pve-exporter/commit/e835dc0ebd70aa7566142c2a24c665f19a53585c))
+
 ## [1.0.2](https://github.com/davidgibbons/prometheus-pve-exporter/compare/v1.0.1...v1.0.2) (2025-07-17)
 
 ### Bug Fixes
